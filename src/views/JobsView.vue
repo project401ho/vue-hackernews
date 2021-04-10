@@ -1,14 +1,12 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+    <div>
+        <h1>Job</h1>
+    </div>
 </template>
 
 <script>
-
 export default {
-  components:{
-  }
+
 }
 </script>
 
