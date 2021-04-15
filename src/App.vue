@@ -19,13 +19,24 @@ export default {
 </script>
 
 <style>
+a{
+    text-decoration: none;
+    color:black;
+}
+a.router-link-exact-active{
+  text-decoration: underline;
+}
+a:hover{
+  color: #2b855c;
+  background-color: #75e7b4;
+}
   .body{
     margin: 0px;
   }
-  .page-enter-active, .page-leave-active {
+  .page-enter-active {
     transition: opacity .5s;
   }
-  .page-enter, .page-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  .page-enter /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
   }
 </style>

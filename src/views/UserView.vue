@@ -1,16 +1,16 @@
 <template>
   <div>
-      <h1>User</h1>
-      <p>name: {{ this.$store.state.user.id }}</p>
-      <p>karma: {{ fetchedUser.karma }}</p>
-      <p>created: {{ fetchedUser.created }}</p>
+    <UserProfile :info="fetchedUser"></UserProfile>
   </div>
 </template>
 
 <script>
 import {mapGetters} from 'vuex'
-
+import UserProfile from '../components/UserProfile.vue'
 export default {
+  components:{
+    UserProfile,
+  },
   computed:{
     ...mapGetters({
       fetchedUser:'fetchedUser'

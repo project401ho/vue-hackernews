@@ -11,8 +11,8 @@ export default{
             fetchNewsList()
             .then((response) => 
             {
-                console.log("RESPONSE!");
-                console.log(response);
+                // console.log("RESPONSE!");
+                // console.log(response);
                 context.commit('SET_NEWS', response.data)
             })
             .catch(error => console.log(error))
