@@ -6,11 +6,23 @@
         </div>
         <div class="user-description">
             <div>
-                {{info.id}}
-            </div>      
+              <!-- User name: {{ info.id }} -->
+              <slot name= "username">
+
+              </slot>                    
+            </div>  
+
+
             <div class="time">
-              {{info.created}}
+              <!-- Time: {{ info.created }} -->
+              <slot name="time">
+                
+              </slot>    
+              <slot name="karma">
+                
+              </slot>                        
             </div>
+
         </div>
       </div>
 
