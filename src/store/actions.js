@@ -3,7 +3,8 @@ import {
     fetchJobsList, 
     fetchAskList, 
     fetchUserInfo, 
-    fetchItemInfo
+    fetchItemInfo,
+    fetchList,
 } from '../api/index.js'
 
 export default{
@@ -14,6 +15,7 @@ export default{
                 // console.log("RESPONSE!");
                 // console.log(response);
                 context.commit('SET_NEWS', response.data)
+                return response;
             })
             .catch(error => console.log(error))
         },
@@ -39,6 +41,14 @@ export default{
             .then(({data}) => commit('SET_ITEM',data))
             .catch(error=>console.log(error))
 
-        }
+        },
+        FETCH_LIST({commit}, pageName){
+            fetchList(pageName)
+            .then(({data}) => {
+                commit('SET_LIST',data);
+            })
+            .catch(error=>console.log(error))
+
+        },
     
 }
