@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
 
 export default {
     data(){
@@ -41,32 +40,10 @@ export default {
 
     computed:{
         listItems(){            
-            if(this.name === "news"){
-                return this.$store.state.news
-            }
-            else if(this.name === "ask"){
-                return this.$store.state.ask
-            }
-            return null;
+            return this.$store.state.list;
         },
-        ...mapGetters({
-            fetchedNews : "fetchedNews",
-            fechedAsk: 'fechedAsk',
-        })
     },
-    created(){
-        console.log(this.name);
-        let dispatchflag = "123";
-        if(this.name === "news"){
-            dispatchflag="FETCH_NEWS";
-        }
-        else if(this.name === "ask"){
-            dispatchflag="FETCH_ASK";
-        }
-        console.log(dispatchflag);
-        this.$store.dispatch(dispatchflag);
 
-    }
 }
 </script>
 
