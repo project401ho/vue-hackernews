@@ -1,18 +1,23 @@
 <template>
     <div>
-        <h1>Job</h1>
         <!-- <div v-bind:key="job.title" v-for="job in this.$store.state.jobs">{{job.title}}</div> -->
-        <h2>API not working currently</h2>
+        <ListItem></ListItem>
     </div>
 </template>
 
 <script>
-
+import ListMixin from '../mixins/ListMixin.js'
+import ListItem from '../components/ListItem.vue'
+// import bus from '../utils/bus.js'
 
 export default {
-    created(){
-        // this.$store.dispatch("FETCH_JOBS");
-    }
+    components:{
+        ListItem
+    },
+    mixins: [ListMixin],
+    // mounted(){
+    //     bus.$emit("end:spinner")
+    // }
 }
 </script>
 
