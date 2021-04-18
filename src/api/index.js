@@ -16,6 +16,15 @@ function fetchUserInfo(userName){
 function fetchItemInfo(itemID){
     return axios.get(`${config.baseUrl}item/${itemID}.json`)
 }
+async function fetchAskList(itemID){
+    try{
+        return await axios.get(`${config.baseUrl}ask/${itemID}.json`)
+    }
+    catch(error){
+        console.log(error);
+    }
+    
+}
 
 
 export{
@@ -23,4 +32,5 @@ export{
     fetchUserInfo,
     fetchItemInfo,
     fetchList,
+    fetchAskList,
 }
